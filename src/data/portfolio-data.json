@@ -1,0 +1,207 @@
+{
+  "name": "MD Ziauddin",
+  "headline": "Senior Software Engineer | Technical Lead: AI, Cloud (AWS/GCP), Fintech - System Architecture - GenAI - Team Mentor",
+  "location": "West Bengal, India",
+  "social": {
+    "email": "md.ziauddin02@gmail.com",
+    "github": "https://github.com/md-ziauddin",
+    "linkedin": "https://linkedin.com/in/md-ziauddin"
+  },
+  "about": "Senior Software Engineer (5+ yrs, B.Tech IT). Technical Lead skilled in system architecture, scalable AI, and full-stack product delivery (React, Node.js, AWS/GCP).\n\n- Led architecture for AI/Fintech products; slashed response latency 90%, sped releases 40%.\n\n- Designed/mentored agile teams (4+ engineers); collaborative delivery with global business and product heads.\n\n- Hands-on builder and code reviewer; expert in real-time data, cloud native, Google Apps Script, Gen AI.\n\nOpen to senior/lead roles: Tech Lead - Staff Engineer - Principal Developer (onsite/hybrid/remote, India & global).\n\nLet's build impact-driven products!",
+  "topSkills": [
+    "Systems Design",
+    "Gen AI",
+    "Amazon Web Services (AWS)",
+    "System Architecture",
+    "Technical Mentorship"
+  ],
+  "experience": [
+    {
+      "role": "Senior Software Engineer",
+      "company": "GROWWTH PARTNERS",
+      "period": "Jul 2024–Present",
+      "location": "Remote/India",
+      "description": [
+        "Architected AI/Fintech platform transformation, driving 90% latency reduction and 40% faster releases. Led cross-functional strategy with business/product heads for scalable system design.",
+        "Spearheaded real-time WebSocket streaming architecture, transforming static UX into dynamic conversational AI assistant (React, Node.js, AWS/GCP)",
+        "Pioneered reusable react-gas framework adopted company-wide; enhanced developer velocity and code quality standards",
+        "Owned end-to-end system design for AI Assistant and scalable referral engine; drove technical reviews and architecture decisions",
+        "Mentored 4+ junior engineers, fostering ownership culture and engineering craftsmanship; improved team autonomy and code quality"
+      ],
+      "stack": ["React", "Node.js", "Google Apps Script", "WebSocket", "AWS", "Gen AI"],
+      "skills": ["Software Design", "Amazon Web Services (AWS)", "Google Apps Script", "Gen AI", "Full-Stack Development"]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "copods",
+      "period": "Aug 2021–Apr 2024",
+      "location": "On-site, Pune",
+      "description": [
+        "As a key engineer in a client-facing role, I translated complex enterprise needs into innovative and tangible software solutions, from initial concept to full-scale deployment.",
+        "Spearheaded multiple proof-of-concepts (POCs) using React and Node.js, rapidly translating abstract ideas into functional prototypes that secured stakeholder buy-in and led to green-lighting two major enterprise development projects.",
+        "Drove the end-to-end development of critical cloud-native projects on AWS for large-scale enterprise clients, engineering efficient and scalable full-stack solutions that directly contributed to securing repeat business and follow-on contracts.",
+        "Engineered robust solutions for complex integration challenges, ensuring seamless data flow and front-end performance that consistently met and exceeded enterprise-level security and reliability standards."
+      ],
+      "skills": ["JavaScript", "Debugging", "Engineering", "SASS", "Webpack", "ECMAScript", "Data Integration", "AWS", "Full-Stack Development", "Vanilla JS", "Docker", "Front-End Dev", "Kubernetes", "CSS", "REST APIs", "Optimization Techniques", "VMware", "HTML5", "React.js", "Figma", "SPA", "MongoDB", "Semantic UI", "Code Review", "Responsive Web Design", "WCAG", "Coding Standards"]
+    },
+    {
+      "role": "Software Engineer Contractor",
+      "company": "VMware",
+      "period": "Mar 2022–Aug 2023",
+      "location": "Hybrid, Pune",
+      "description": [
+        "Took ownership of critical front-end initiatives, focusing on modernization, security, and seamless user experience for core VMware products.",
+        "Led migration of user authentication system to OAuth 2.0, eliminated legacy vulnerabilities, and improved product security.",
+        "Sole UI engineer for company rebranding, rebuilt key UIs with React, improved brand experience product-wide.",
+        "Developed complex customer-facing features for licensing/subscription portal, making critical revenue-generating journeys more intuitive."
+      ],
+      "skills": ["JavaScript", "Debugging", "Webpack", "ECMAScript", "SaaS", "Full-Stack Dev", "D3.js", "Agile", "React.js", "Figma", "SPA", "Concept Generation", "Code Review", "Coding Standards"]
+    },
+    {
+      "role": "Software Engineer Contractor",
+      "company": "Ariksa",
+      "period": "Aug 2021–Mar 2022",
+      "location": "Remote, Pune",
+      "description": [
+        "Delivered key data visualization features using AntV G6 as part of a 50-person team",
+        "Implemented Charts and visualization mapping interconnectivity between VMs using AntV G6"
+      ],
+      "skills": ["ECMAScript", "Document Object Model (DOM)"]
+    },
+    {
+      "role": "Frontend Engineer Intern",
+      "company": "birbal",
+      "period": "Apr 2021–Jul 2021",
+      "location": "Bengaluru",
+      "description": [
+        "Built MERN stack apps; strong understanding of JavaScript and React.",
+        "Translated Figma designs into high-quality, reusable React components.",
+        "Wrote maintainable, reusable code as a foundation for the application's UI."
+      ],
+      "skills": ["Debugging", "SASS", "Webpack", "AWS", "Docker", "HTML5", "React.js", "Figma", "SPA", "MongoDB", "Responsive Web Design"]
+    },
+    {
+      "role": "IT/Network Intern",
+      "company": "Unique Infotech Pvt LTD",
+      "period": "Jun 2019–Sep 2019",
+      "location": "Kolkata",
+      "description": [
+        "Managed 100+ desktops, programmed .bat automations (50% faster setup), designed DB schema with SQL/Python"
+      ],
+      "skills": ["Debugging", "Networking", "Computer Hardware", "IT Hardware Support"]
+    }
+  ],
+  "education": {
+    "institution": "Future Institute of Engineering and Management 148",
+    "degree": "Bachelor of Technology (BTech), Information Technology",
+    "period": "Jul 2017–Jul 2021",
+    "grade": "8.33",
+    "details": [
+      "Core: C/C++, Java, Data Structures/Algorithms, DBMS, OS, Networking"
+    ],
+    "skills": ["MongoDB", "Responsive Web Design", "SASS", "CSS", "HTML5", "Git", "AWS"]
+  },
+  "certifications": [
+    {
+      "name": "Introduction to Generative AI",
+      "issuer": "Google Cloud Skills Boost",
+      "date": "Apr 2025",
+      "skills": ["Gen AI"]
+    },
+    {
+      "name": "JavaScript: Patterns",
+      "issuer": "LinkedIn",
+      "date": "May 2024",
+      "skills": ["JavaScript"]
+    },
+    {
+      "name": "JavaScript: Service Workers",
+      "issuer": "LinkedIn",
+      "date": "May 2024"
+    },
+    {
+      "name": "Docker for the Absolute Beginner",
+      "issuer": "KodeKloud",
+      "date": "Oct 2021",
+      "id": "5672883280174750"
+    },
+    {
+      "name": "React (Basic)",
+      "issuer": "HackerRank",
+      "date": "Feb 2021",
+      "skills": ["Front-End Development"]
+    },
+    {
+      "name": "Become a Software Developer",
+      "issuer": "LinkedIn",
+      "date": "Jul 2020"
+    }
+  ],
+  "skills": [
+    "System Architecture",
+    "Technical Mentorship",
+    "Systems Design",
+    "Google Cloud Platform (GCP)",
+    "Software Design",
+    "Google Apps Script",
+    "Gen AI",
+    "ECMAScript",
+    "Document Object Model (DOM)",
+    "Data Integration",
+    "Problem Solving",
+    "Trouble-shooting/Debugging",
+    "React.js",
+    "Front-End Development",
+    "Full-Stack Development",
+    "Node.js",
+    "REST APIs",
+    "Agile",
+    "Docker",
+    "AWS",
+    "Kubernetes",
+    "MongoDB",
+    "HTML5",
+    "CSS",
+    "SASS",
+    "Git",
+    "Figma",
+    "SPA",
+    "Code Review"
+  ],
+  "recommendations": [
+    {
+      "author": "Arnab Khound",
+      "title": "Director UX @Netskope, Ex-VMware, etc.",
+      "date": "Oct 2, 2023",
+      "text": "Zia has been always been very meticulous in his approach and hard-working. I collaborated with him on multiple assignments and it was always good to work with him. I am sure, he will add great value to any team that he would be a part of. Wishing him all the best!"
+    },
+    {
+      "author": "Arfa Bakhtiar",
+      "title": "Member Of Technical Staff at VMware",
+      "date": "Sep 25, 2023",
+      "text": "Ziauddin and I had worked on project, Ziauddin is proactive, result oriented, responsible and technically sound... his development skills are excellent and he is always ready to put all his effort and time to get the job done. He is a great asset to any company."
+    },
+    {
+      "author": "Shivi Makwana",
+      "title": "Test Automation Engineer, VMware",
+      "date": "Sep 21, 2023",
+      "text": "He is a very cooperative and expert UI developer."
+    },
+    {
+      "author": "Sanket Kadarkar",
+      "title": "Sr. Software Engineer at Spotnana, Ex-VMware, IITB/PICT",
+      "date": "Sep 21, 2023",
+      "text": "At VMware, Zia and I worked together on multiple critical project during his tenure of 1 year. For me and many of us from back-end team, Zia is the go to person for front-end features. Zia's due diligence and efforts to know the E2E use-case for the functionality that he was working on was really impressive. This help us in many cases to deliver performance optimized front-end and back-end integration. He is really passionate about his work which enabled us to deliver the mission critical project in time with quality."
+    }
+  ],
+  "projects": [
+    {
+      "year": "2024",
+      "title": "Dummy Project",
+      "company": "Dummy Company",
+      "technologies": ["React", "Gatsby"],
+      "link": "#",
+      "description": "This is a dummy project."
+    }
+  ]
+}
