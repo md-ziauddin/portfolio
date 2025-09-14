@@ -4,7 +4,7 @@ import ProjectsTable from '../components/ProjectsTable';
 
 const ProjectsPage = () => {
   return (
-    <Layout>
+    <Layout title="Project Showcase">
       <h1>Project Showcase</h1>
       <ProjectsTable />
     </Layout>

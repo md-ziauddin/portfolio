@@ -6,7 +6,7 @@ import Projects from '../components/Projects';
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout title="Home">
       <About />
       <Experience />
       <Projects />
