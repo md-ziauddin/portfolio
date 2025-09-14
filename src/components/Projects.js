@@ -23,7 +23,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
-      <h2 className="text-xl font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Projects</h2>
+      <h2 className="text-xl font-bold uppercase tracking-widest text-slate-200 lg:sr-only mb-6">Projects</h2>
       <div>
         <ul className="group/list">
           {projects.map((project, i) => (

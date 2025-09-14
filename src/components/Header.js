@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import useActiveSection from '../hooks/useActiveSection';
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -21,6 +22,14 @@ const Header = () => {
   `);
 
   const { name, headline, social } = data.allPortfolioData.edges[0].node;
+  const activeSection = useActiveSection(['about', 'experience', 'projects']);
+
+  const handleNavLinkClick = (e, id) => {
+    e.preventDefault();
+    document.getElementById(id).scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24">
@@ -33,13 +42,40 @@ const Header = () => {
         </h2>
         <nav className="nav hidden lg:block" aria-label="In-page jump links">
           <ul className="mt-16 w-max">
-            <li><a  className="group flex items-center py-3 active" href="#about"><span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white motion-reduce:transition-none"></span><span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">About</span></a></li>
-            <li><a  className="group flex items-center py-3" href="#experience"><span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white motion-reduce:transition-none"></span><span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">Experience</span></a></li>
-            <li><a  className="group flex items-center py-3" href="#projects"><span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white motion-reduce:transition-none"></span><span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">Projects</span></a></li>
+            <li>
+              <a
+                className={`group flex items-center py-3 ${activeSection === 'about' ? 'active' : ''}`}
+                href="#about"
+                onClick={(e) => handleNavLinkClick(e, 'about')}
+              >
+                <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white motion-reduce:transition-none"></span>
+                <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">About</span>
+              </a>
+            </li>
+            <li>
+              <a
+                className={`group flex items-center py-3 ${activeSection === 'experience' ? 'active' : ''}`}
+                href="#experience"
+                onClick={(e) => handleNavLinkClick(e, 'experience')}
+              >
+                <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white motion-reduce:transition-none"></span>
+                <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">Experience</span>
+              </a>
+            </li>
+            <li>
+              <a
+                className={`group flex items-center py-3 ${activeSection === 'projects' ? 'active' : ''}`}
+                href="#projects"
+                onClick={(e) => handleNavLinkClick(e, 'projects')}
+              >
+                <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white motion-reduce:transition-none"></span>
+                <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">Projects</span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
-      <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
+      <ul className="ml-1 md:mt-8 lg:mt-[200px] flex items-center" aria-label="Social media">
         <li className="mr-5 text-xs">
           <a href={`mailto:${social.email}`} className="block hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="Email (opens in a new tab)">
             <span className="sr-only">Email</span>

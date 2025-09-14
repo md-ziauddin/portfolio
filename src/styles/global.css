@@ -2,8 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-background;
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  padding: 8px;
+  background: var(--accent);
+  color: var(--background);
+  z-index: 100;
+  top: 10px; /* This was from the original index.html, keeping it for consistency */
+  left: 0; /* This was from the original index.html, keeping it for consistency */
 }
 
 .cursor-glow {
@@ -18,4 +42,13 @@ body {
   height: 800px;
   z-index: 9999;
   transition: width 0.2s, height 0.2s;
+}
+
+.group.active .nav-indicator {
+  width: 4rem; /* Equivalent to w-16 */
+  background-color: white;
+}
+
+.group.active .nav-text {
+  color: white;
 }

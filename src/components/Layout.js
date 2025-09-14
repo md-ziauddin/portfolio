@@ -64,7 +64,7 @@ const Layout = ({ children, title }) => {
             </main>
           </div>
         </div>
-        <div className="fixed bottom-0 left-12">
+        <div className="lg:fixed lg:bottom-0 lg:left-12">
           <button onClick={() => setMuted(!muted)} className="mb-4">
             {muted ? <MutedIcon /> : <UnmutedIcon />}
           </button>

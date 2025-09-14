@@ -8,9 +8,7 @@ const ProjectsTable = () => {
         edges {
           node {
             projects {
-              year
               title
-              company
               technologies
               link
             }
@@ -26,9 +24,7 @@ const ProjectsTable = () => {
     <table>
       <thead>
         <tr>
-          <th>Year</th>
           <th>Title</th>
-          <th>Made at</th>
           <th>Built with</th>
           <th>Link</th>
         </tr>
@@ -36,9 +32,7 @@ const ProjectsTable = () => {
       <tbody>
         {projects.map((project, i) => (
           <tr key={i}>
-            <td>{project.year}</td>
             <td>{project.title}</td>
-            <td>{project.company}</td>
             <td>{project.technologies.join(', ')}</td>
             <td><a href={project.link} target="_blank" rel="noreferrer noopener">{project.link}</a></td>
           </tr>

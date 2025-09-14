@@ -19,7 +19,7 @@ const About = () => {
 
   return (
     <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
-      <h2 className="text-xl font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
+      <h2 className="text-xl font-bold uppercase tracking-widest text-slate-200 lg:sr-only mb-6">About</h2>
       <div className="space-y-4">
         {about.split('\n\n').map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
