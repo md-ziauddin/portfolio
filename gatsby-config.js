@@ -30,6 +30,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `showcase`,
+        path: `${__dirname}/src/content/showcase`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-json`,
       options: {
         typeName: `PortfolioData`,
@@ -41,5 +48,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-mdx`,
   ],
 }
