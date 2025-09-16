@@ -196,18 +196,11 @@
   ],
   "projects": [
     {
-      "title": "Real-time AI Streaming (WebRTC + NestJS/Next.js)",
-      "description": "Developed a Gemini-style live interaction system for scalable audio and LLM streaming, building a high-throughput backend with WebRTC for minimal latency communication between clients and AI services.",
+      "title": "Articulate AI",
+      "description": "Interviews are tough. The pressure, the need to be sharp, and the challenge of clearly communicating complex ideas can be overwhelming. I wanted to build something to help people overcome that anxiety. That's the \"why\" behind Articulate AI.",
       "technologies": ["WebRTC", "NestJS", "Next.js", "GCP/AWS"],
-      "link": "#",
-      "slug": "real-time-ai-streaming"
-    },
-    {
-      "title": "S3 Lifecycle Automation",
-      "description": "Created serverless, tag-based cleanup workflows for AWS S3 to enforce compliance retention policies and reduce storage costs. Automated object lifecycle management using Lambda and EventBridge triggers, deployed via IaC.",
-      "technologies": ["AWS S3", "Lambda", "EventBridge"],
-      "link": "#",
-      "slug": "s3-lifecycle-automation"
+      "link": "/showcase/articulate-ai/",
+      "slug": "articulate-ai/"
     }
   ],
   "archive": [

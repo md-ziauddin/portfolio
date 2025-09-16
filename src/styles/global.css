@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  background: var(--background);
+}
+
 .skip-link {
   position: absolute;
   width: 1px;

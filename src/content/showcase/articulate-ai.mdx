@@ -1,0 +1,151 @@
+---
+title: "Building Articulate AI: A Deep Dive into My AI Mock Interview Project"
+description: "The story and tech behind Articulate AI, a real-time, AI-powered mock interview platform built with Nest.js, Next.js, WebRTC, and Google's Gemini API."
+date: "2025-09-16"
+slug: "articulate-ai"
+hero_image: "./images/articulate_ai_architecture_sequential_diagram.png"
+tags:
+  - "AI"
+  - "WebRTC"
+  - "Nest.js"
+  - "Next.js"
+  - "Supabase"
+  - "Turborepo"
+  - "Gemini"
+---
+
+### The Vision: More Than Just a Project
+
+Interviews are tough. The pressure, the need to be sharp, and the challenge of clearly communicating complex ideas can be overwhelming. I wanted to build something to help people overcome that anxiety. That's the "why" behind Articulate AI.
+
+> My vision is to create a realistic, AI-powered mock interview platform that helps users build confidence and improve their communication and technical skills in a hands-on, real-time environment.
+
+It’s not just about practicing questions; it’s about creating a safe space to fail, learn, and grow, so you can walk into your real interview feeling prepared and confident. 🚀
+
+---
+
+### What is Articulate AI?
+
+At its core, **Articulate AI** is a web application that lets you practice job interviews with a smart, responsive AI. You tell it the job role and skills you're targeting, and it conducts a full voice-based interview with you, right in your browser.
+
+Here are the standout features:
+
+* **Customized Interviews:** Define a job role (e.g., "Senior React Developer") and key skills, and the AI generates a relevant set of questions.
+* **Real-time Voice Conversation:** No typing. You speak directly to the AI, and it responds in real-time, thanks to a WebRTC-powered audio stream.
+* **Actionable AI Feedback:** After the interview, the AI analyzes the entire conversation to give you a detailed report on your performance, highlighting your strengths and offering specific suggestions for improvement.
+* **Role-Based Access:** The platform is built with a secure authentication system that supports different user roles, like `interviewee`, `interviewer`, and `admin`.
+
+---
+
+### The Technical Architecture: A Top-Down Look
+
+Building a real-time AI application requires a robust and scalable architecture. I chose a modern monorepo approach to keep the code organized and maintainable.
+
+The project is managed with **Turborepo** and split into two main applications:
+1.  **`apps/web`**: A **Next.js** frontend for the entire user experience.
+2.  **`apps/api`**: A **Nest.js** backend that serves as the brain, handling business logic, signaling, and AI integration.
+
+For the database and user authentication, I chose **Supabase**, which provides a powerful managed Postgres database and handles all the complexities of secure authentication out of the box.
+
+### The Real-time Magic: How it All Connects 🎙️
+
+The most complex part of this project is the real-time conversation. Here’s a simplified breakdown of the data flow during an active interview session:
+
+
+1.  **Authentication:** The Next.js client authenticates the user directly with Supabase, which returns a JWT. For all subsequent API calls, this JWT is sent to our Nest.js backend.
+2.  **Signaling:** When an interview starts, the client connects to a **WebSocket Gateway** on the Nest.js server. This gateway acts as a signaling server to broker a direct **WebRTC** peer-to-peer connection.
+3.  **The Conversation Loop:**
+    * The user speaks. Their audio is captured in the browser and streamed directly to the Nest.js backend via the WebRTC connection.
+    * The backend proxies this audio stream in real-time to the **Google Gemini API**.
+    * Gemini performs live Speech-to-Text (STT), processes the transcribed text to formulate a response, and generates audio using Text-to-Speech (TTS).
+    * This AI-generated audio is streamed back to the backend, which proxies it to the client, where it's played for the user.
+4.  **Feedback Generation:** Throughout the session, the backend accumulates the conversation transcript. When the user clicks "End Interview," the full transcript is sent to the Gemini API one last time for a comprehensive analysis, which is then saved to the database.
+
+---
+
+### The Journey: Key Decisions and Learnings
+
+I approached the development with a "backend-first" mentality, treating the Nest.js API as a standalone product. This ensured the core logic was solid before I even started on the UI. The roadmap was broken down into several key epics.
+
+#### Delegating Authentication to Supabase
+A crucial decision was to let Supabase handle authentication entirely. The Next.js frontend talks to Supabase for sign-up and login. My Nest.js backend simply validates the Supabase-issued JWT on every protected request using a custom `SupabaseAuthGuard`. This saved a massive amount of time and leverages Supabase's robust security.
+
+#### Choosing the Right AI Tool
+My initial research involved looking at various services. I ultimately landed on the **Google Vertex AI Gemini API**. A key finding was that its "Live API" was the perfect all-in-one solution for my needs, handling real-time STT, LLM logic, and TTS within a single, manageable streaming session. This was a huge architectural win, simplifying the backend integration significantly.
+
+#### Building the Signaling Layer First
+Before touching any AI code, I focused entirely on building a robust WebRTC signaling gateway. This epic's goal was simple: get two clients to establish a peer-to-peer audio connection, brokered by my Nest.js server. By isolating this complex piece, I could test it thoroughly before integrating the AI, which made debugging much easier down the line.
+
+### The Tech Stack 🛠️
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr>
+      <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Category</th>
+      <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Technology</th>
+      <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr className="border-b border-slate-300/10">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Monorepo</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Turborepo</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">To manage the Next.js and Nest.js applications in a single repository.</td>
+    </tr>
+    <tr className="border-b border-slate-300/10">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Frontend</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Next.js</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">For the user-facing application, UI rendering, and routing.</td>
+    </tr>
+    <tr className="border-b border-slate-300/10">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Backend</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Nest.js</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">For the custom REST API, WebRTC signaling server, and Gemini integration.</td>
+    </tr>
+    <tr className="border-b border-slate-300/10">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">AI & Voice</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Google Gemini API</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Core AI for STT, TTS, question generation, and feedback analysis.</td>
+    </tr>
+    <tr className="border-b border-slate-300/10">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Real-time Comms</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">WebRTC</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">For real-time, low-latency audio streaming between client and server.</td>
+    </tr>
+    <tr className="border-b border-slate-300/10">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Database</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Supabase (Postgres)</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Managed PostgreSQL database and backend services.</td>
+    </tr>
+    <tr className="border-b border-slate-300/10">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Authentication</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Supabase Auth</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Handles user sign-up, sign-in, and JWT management.</td>
+    </tr>
+    <tr className="border-b border-slate-300/10">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">UI</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Tailwind CSS & Shadcn/ui</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">For a modern, responsive, and component-based design system.</td>
+    </tr>
+    <tr className="border-b border-slate-300/10 last:border-none">
+      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Deployment</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Vercel (Frontend), Docker (Backend)</td>
+      <td className="py-4 pr-4 align-top text-sm text-slate-400">Vercel for the Next.js app; a containerized service for the Nest.js backend.</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+### Current Status & What's Next
+
+I'm thrilled to announce that the entire backend is now ready! 🥳 The last phase was a deep dive into the most complex part of the system: the real-time AI integration.
+
+A significant amount of time was consumed isolating and fixing issues with the **Gemini Live API**. Getting real-time, bidirectional audio streaming to work flawlessly required a lot of focused effort, but that persistence paid off. The integration is now stable and working as intended.
+
+With the core engine built, my current focus is on stitching everything together and ensuring the backend is a rock-solid, reliable product. Before moving on to the frontend, my immediate next steps are:
+* Creating dedicated test scripts to validate the bidirectional audio streaming from end to end.
+* Finalizing a comprehensive Postman collection with detailed examples for every API endpoint.
+* Thoroughly documenting the backend API to ensure a smooth and seamless integration with the Next.js frontend.
+
+Once this is complete, the next major phase will be bringing the user experience to life by building out the frontend application. Stay tuned!
