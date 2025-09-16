@@ -8,6 +8,7 @@ const Experience = () => {
         edges {
           node {
             experience {
+              link
               role
               company
               period
@@ -24,6 +25,9 @@ const Experience = () => {
 
   const { experience } = data.allPortfolioData.edges[0].node;
 
+  console.log({experience});
+  
+
   return (
     <section id="experience" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
       <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only mb-6">Experience</h2>
@@ -37,7 +41,7 @@ const Experience = () => {
                 <div className="z-10 sm:col-span-6">
                   <h3 className="font-medium leading-snug text-slate-200">
                     <div>
-                      <a className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-sky-300 focus-visible:text-sky-300 group/link text-base" href="#" target="_blank" rel="noreferrer noopener" aria-label={`${item.role} at ${item.company} (opens in a new tab)`}>
+                      <a className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-sky-300 focus-visible:text-sky-300 group/link text-base" href={item.link} target="_blank" rel="noreferrer noopener" aria-label={`${item.role} at ${item.company} (opens in a new tab)`}>
                         <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                         <span>{item.role} · {item.company}</span>
                       </a>

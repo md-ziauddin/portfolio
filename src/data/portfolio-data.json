@@ -17,6 +17,7 @@
   ],
   "experience": [
     {
+      "link": "https://ryzup.ai/",
       "role": "Senior Software Engineer",
       "company": "GROWWTH PARTNERS",
       "period": "Jul 2024–Present",
@@ -32,6 +33,7 @@
       "skills": ["Software Design", "Amazon Web Services (AWS)", "Google Apps Script", "Gen AI", "Full-Stack Development"]
     },
     {
+      "link": "https://copods.co/",
       "role": "Software Engineer",
       "company": "copods",
       "period": "Aug 2021–Apr 2024",
@@ -45,6 +47,7 @@
       "skills": ["JavaScript", "Debugging", "Engineering", "SASS", "Webpack", "ECMAScript", "Data Integration", "AWS", "Full-Stack Development", "Vanilla JS", "Docker", "Front-End Dev", "Kubernetes", "CSS", "REST APIs", "Optimization Techniques", "VMware", "HTML5", "React.js", "Figma", "SPA", "MongoDB", "Semantic UI", "Code Review", "Responsive Web Design", "WCAG", "Coding Standards"]
     },
     {
+      "link": "https://www.vmware.com/",
       "role": "Software Engineer Contractor",
       "company": "VMware",
       "period": "Mar 2022–Aug 2023",
@@ -58,6 +61,7 @@
       "skills": ["JavaScript", "Debugging", "Webpack", "ECMAScript", "SaaS", "Full-Stack Dev", "D3.js", "Agile", "React.js", "Figma", "SPA", "Concept Generation", "Code Review", "Coding Standards"]
     },
     {
+      "link": "https://ariksa.com/",
       "role": "Software Engineer Contractor",
       "company": "Ariksa",
       "period": "Aug 2021–Mar 2022",
@@ -69,6 +73,7 @@
       "skills": ["ECMAScript", "Document Object Model (DOM)"]
     },
     {
+      "link": "https://www.linkedin.com/company/birbalstore/",
       "role": "Frontend Engineer Intern",
       "company": "birbal",
       "period": "Apr 2021–Jul 2021",
@@ -81,6 +86,7 @@
       "skills": ["Debugging", "SASS", "Webpack", "AWS", "Docker", "HTML5", "React.js", "Figma", "SPA", "MongoDB", "Responsive Web Design"]
     },
     {
+      "link": "https://www.uniqueinfotech.com/",
       "role": "IT/Network Intern",
       "company": "Unique Infotech Pvt LTD",
       "period": "Jun 2019–Sep 2019",
