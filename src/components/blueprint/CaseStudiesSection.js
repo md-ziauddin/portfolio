@@ -562,7 +562,7 @@ export default function CaseStudiesSection({ isDark, onToast }) {
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <span className="font-mono text-xs font-bold text-amber-500 flex items-center gap-2">
                   <PenTool className="w-4 h-4 shrink-0" />
-                  <span>EXPANDED SYSTEM ARCHITECTURE BLUEPRINT (EXCALIDRAW TABLET SPEC)</span>
+                  <span>EXPANDED SYSTEM ARCHITECTURE BLUEPRINT</span>
                 </span>
                 <span className="font-mono text-xs opacity-65">
                   Press ESC or click outside to close
