@@ -14,6 +14,7 @@ html {
 
 html, body {
   background: var(--background);
+  overflow-x: clip;
 }
 
 .skip-link {

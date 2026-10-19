@@ -92,7 +92,7 @@ export default function BlueprintPortfolioApp({ pathname = '/' }) {
   return (
     <div
       id="top"
-      className={`min-h-screen overflow-x-hidden transition-colors duration-300 selection:bg-emerald-500 selection:text-slate-950 ${
+      className={`min-h-screen transition-colors duration-300 selection:bg-emerald-500 selection:text-slate-950 ${
         isDark ? 'bg-[#0B0D10] text-slate-100 dark' : 'bg-[#FAF8F5] text-[#141413]'
       }`}
       style={{
