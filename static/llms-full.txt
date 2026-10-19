@@ -1,0 +1,71 @@
+# MD Ziauddin - Comprehensive Technical & Architecture Dossier (llms-full.txt)
+
+> This document is formatted according to the `llms.txt` standard to provide AI search engines (Perplexity, ChatGPT Search, Claude, Google AI Overviews) and technical recruiting agents with verified, structured facts about MD Ziauddin.
+
+---
+
+## 1. Executive Profile
+- **Full Name:** MD Ziauddin
+- **Current Title:** Forward Deployed Engineer (FDE) & Senior AI Systems Engineer
+- **Experience:** 5+ Years in Production Software Engineering, AI Systems, and Enterprise Architecture
+- **Location:** India
+- **Website:** https://ziadev.in
+- **LinkedIn:** https://www.linkedin.com/in/md-ziauddin
+- **GitHub:** https://github.com/md-ziauddin
+- **Workflow Signature:** Tablet + Excalidraw System Sketch -> Benchmark & Telemetry Spec -> Production TypeScript / Python / Fastify
+
+---
+
+## 2. Flagship System Architectures & Production Proofs
+
+### Case Study 1: OmniDimension - Enterprise Voice AI & Automated QA (1,000,000+ Calls)
+- **Role:** Forward Deployed Engineer (Feb 2026 - Oct 2026) / Software Engineer - GenAI (Nov 2025 - Feb 2026)
+- **Problem:** Enterprise healthcare and e-commerce voice campaigns experienced 1,850ms+ awkward conversational dead-air during LLM/CRM lookups, while manual QA teams could audit <1% of call recordings against strict clinical SOPs.
+- **Architecture & Solution:**
+  1. **Telephony & Streaming STT:** Tuned Twilio/Ozonetel/Exotel bi-directional WebSockets and custom VAD endpointing across Deepgram/Soniox/Speechmatics to cut end-of-thought detection by 250ms.
+  2. **Dynamic Contextual Filler Engine:** Built a <120ms micro-intent filler that plays context-aware conversational audio while the Voice AI pipeline queries RAG and CRM lookups in parallel - reducing perceived latency to ~380ms TTFA.
+  3. **Enterprise CRM & Scheduling Sync:** Engineered bidirectional integrations with Odoo and LeadSquared CRMs, generating 50+ qualified patient consultations in the first month.
+  4. **Automated LLM SOP Compliance Pipeline:** Audited 100% of call recordings asynchronously against proprietary clinical and operational scoring matrices.
+
+### Case Study 2: MedSearch AI & K-Search - Empirical MLflow Medical RAG Evaluation Pipeline
+- **Repository & Benchmark Report:** https://github.com/md-ziauddin/rag_evaluation_pipeline/commit/c4af8e04fe5793619b37927639a270f745ed8740
+- **Infrastructure:** PubMedQA (`pqa_labeled`), Qdrant (`v1.12.4`), AWS Bedrock (`amazon.titan-embed-text-v2:0` 1,024-dim + `us.anthropic.claude-sonnet-4-5-20250929-v1:0`), LangGraph (Agentic vs Linear RAG), BM25 + RRF ($k=60$), and MLflow (`v2.17.2`).
+- **Empirical Findings:**
+  - **Experiment 1 (100 Docs, ~500 Chunks, 15 Queries):** Dense retrieval achieved `1.1417` NDCG@10 and `0.4989` MRR@10 (`~508ms/query`), while Dense + Agentic achieved `0.8094` Answer Relevance and `0.3774` Faithfulness. Naive 50/50 BM25 + Dense fusion dropped MRR@10 to `0.3400` due to generic biomedical token collisions.
+  - **Experiment 2 Scale Sweep (300 Docs, ~1,500 Chunks, 30 Queries):** Dense retrieval achieved `0.9471` NDCG@10 and `0.4450` MRR@10 (`~251ms/query`). Under noisy hybrid search, the self-correcting **LangGraph Agentic relevance grader** caught lexical false positives, boosting Hybrid NDCG@10 from `0.5587` to `0.6441` (`+15.3%`) and MRR@10 from `0.2583` to `0.2922` (`+13.1%`) at `~246ms/query`.
+
+### Case Study 3: Growwth Partners & RyzUp Sheets - Real-Time Fintech & React GAS Runtime
+- **Role:** Senior Software Engineer (Jul 2024 - Nov 2025)
+- **Problem:** Financial analysts faced 2.4s+ polling delays on the web platform and fragmented Google Sheets workflows.
+- **Architecture & Solution:**
+  - Replaced REST polling with multiplexed bidirectional WebSockets + Redis Pub/Sub, reducing application latency by 90% (2,400ms to 240ms) and accelerating release velocity by 40%.
+  - Created a standardized React Google Apps Script (GAS) framework powering RyzUp Sheets (`=RYZUP_AI()`, `=RYZUP_FORECAST()`, `=RYZUP_AUDIT()`) and mentored 4 junior engineers.
+
+### Case Study 4: Articulate AI & High-Throughput Backend Primitives
+- **Architecture & Solution:**
+  - **Articulate AI:** Real-time voice mock interview platform built with Turborepo, Next.js, Nest.js WebRTC signaling gateway, Supabase Auth/PostgreSQL, and Google Gemini Live API.
+  - **Sub-Millisecond Shortlink & Telemetry Engine:** Fastify + AJV pre-compiled schemas + Sqids bijective encoding + Redis write-through cache (0.42ms hit latency) + non-blocking analytics sink.
+
+---
+
+## 3. Complete Career Timeline
+1. **OmniDimension** - *Forward Deployed Engineer (FDE)* (Feb 2026 - Oct 2026, India)
+   - Promoted within 3 months from Software Engineer - GenAI to lead enterprise Voice AI deployments (1,000,000+ calls), STT/LLM/TTS benchmarking, Odoo/LeadSquared integrations (50+ consultations in the first month), and live launch triage.
+2. **OmniDimension** - *Software Engineer - GenAI* (Nov 2025 - Feb 2026, India)
+   - Engineered Dynamic Contextual Filler latency masking, automated LLM SOP compliance evaluation pipelines, and event-driven alerting infrastructure.
+3. **Growwth Partners** - *Senior Software Engineer* (Jul 2024 - Nov 2025, India)
+   - Led AI fintech platform modernization (-90% latency, +40% release velocity), bidirectional WebSocket AI assistant, Referral Engine, React GAS framework, and mentorship of 4 engineers.
+4. **Copods (Embedded at VMware & Ariksa)** - *Software Engineer* (Aug 2021 - Apr 2024, India)
+   - **VMware (Mar 2022 - Aug 2023):** Migrated enterprise licensing authentication to OAuth 2.0 and led React UI branding modernization across global subscription workflows.
+   - **Ariksa (Aug 2021 - Mar 2022):** Engineered infrastructure monitoring dashboards and interactive VM dependency relationship graphs using AntV G6.
+5. **Birbal & Unique Infotech** - *Frontend Engineer / IT Intern* (2019 - Jul 2021, India)
+   - Built reusable MERN & React component libraries from Figma designs; automated desktop provisioning by >50%.
+
+---
+
+## 4. Education & Peer Recommendations
+- **Education:** B.Tech in Information Technology, Future Institute of Engineering and Management, India (Jul 2017 - Jul 2021, 8.33 CGPA).
+- **Verified Peer Endorsements:**
+  - *Arnab Khound (Director UX @ Netskope, Ex-VMware):* "Zia has always been very meticulous in his approach and hard-working... he will add great value to any team."
+  - *Arfa Bakhtiar (Member of Technical Staff @ VMware):* "Ziauddin is proactive, result-oriented, responsible and technically sound... a great asset to any company."
+  - *Sanket Kadarkar (Sr. Software Engineer @ Spotnana, Ex-VMware):* "For me and many of us from the back-end team, Zia is the go-to person for front-end features. Zia's due diligence and efforts to know the E2E use-case was really impressive."

@@ -1,33 +1,61 @@
 {
   "name": "MD Ziauddin",
-  "headline": "Senior Software Engineer | Technical Lead: AI, Cloud (AWS/GCP), Fintech - System Architecture - GenAI - Team Mentor",
-  "location": "West Bengal, India",
+  "headline": "Forward Deployed Engineer (FDE) & Senior AI Systems Engineer | Voice AI (1M+ Calls), LLMs, Hybrid RAG, Distributed Systems",
+  "location": "India",
   "social": {
-    "email": "md.ziauddin02@gmail.com",
     "github": "https://github.com/md-ziauddin",
     "linkedin": "https://linkedin.com/in/md-ziauddin"
   },
-  "about": "Senior Software Engineer (5+ yrs, B.Tech IT). Technical Lead skilled in system architecture, scalable AI, and full-stack product delivery (React, Node.js, AWS/GCP).\n\n- Led architecture for AI/Fintech products; slashed response latency 90%, sped releases 40%.\n\n- Designed/mentored agile teams (4+ engineers); collaborative delivery with global business and product heads.\n\n- Hands-on builder and code reviewer; expert in real-time data, cloud native, Google Apps Script, Gen AI.\n\nOpen to senior/lead roles: Tech Lead - Staff Engineer - Principal Developer (onsite/hybrid/remote, India & global).\n\nLet's build impact-driven products!",
+  "about": "Senior Software Engineer and Forward Deployed AI Engineer with 5+ years of experience architecting full-stack platforms, real-time distributed systems, and production-grade Voice AI & GenAI workflows. Proven track record of scaling enterprise Voice AI deployments to 1,000,000+ outbound calls, reducing fintech platform latency by 90%, and delivering mission-critical software for global enterprises including VMware.",
   "topSkills": [
-    "Systems Design",
-    "Gen AI",
-    "Amazon Web Services (AWS)",
-    "System Architecture",
-    "Technical Mentorship"
+    "Voice AI & Latency Mitigation",
+    "LangGraph & Hybrid RAG (Qdrant)",
+    "Forward Deployed Solution Architecture",
+    "TypeScript / Fastify / Python",
+    "Distributed Systems & WebSockets"
   ],
   "experience": [
+    {
+      "link": "https://ziadev.in/showcase/omnidimension-voice-ai-latency",
+      "role": "Forward Deployed Engineer (FDE)",
+      "company": "OmniDimension",
+      "period": "Feb 2026 - Oct 2026",
+      "location": "India",
+      "description": [
+        "Promoted from Software Engineer within 3 months to spearhead enterprise Voice AI deployments, owning end-to-end solution architecture from design through production launch and optimization.",
+        "Architected and deployed autonomous Voice AI workflows for enterprise healthcare campaigns, reliably processing 1,000,000+ outbound calls and driving multi-account expansion.",
+        "Profiled and benchmarked diverse combinations of LLMs, Speech-to-Text (STT), and Text-to-Speech (TTS) models to establish optimal latency-accuracy configurations.",
+        "Engineered bidirectional integrations between Voice AI agents, scheduling engines, and enterprise CRMs (Odoo, LeadSquared), generating 50+ qualified patient consultations in month one.",
+        "Served as primary engineering liaison for enterprise e-commerce Voice AI rollouts, leading live production triage, root-cause validation, and cross-team incident resolution."
+      ],
+      "stack": ["Voice AI", "LangGraph", "STT/TTS Benchmarking", "Odoo", "LeadSquared", "Twilio", "Ozonetel"],
+      "skills": ["Voice AI", "LangGraph", "System Design", "Enterprise CRM Integrations", "Production Triage"]
+    },
+    {
+      "link": "https://ziadev.in/showcase/omnidimension-voice-ai-latency",
+      "role": "Software Engineer - GenAI",
+      "company": "OmniDimension",
+      "period": "Nov 2025 - Feb 2026",
+      "location": "India",
+      "description": [
+        "Engineered a dynamic contextual filler system to mask LLM inference and backend network latency, significantly reducing perceived response wait times (~380ms TTFA) during live voice calls.",
+        "Built an automated LLM-based QA and compliance pipeline to audit call recordings against operational SOPs and proprietary scoring matrices at scale.",
+        "Designed a real-time, rule-based notification framework (broadcast and user-specific alerts) and automated campaign analytics reporting infrastructure."
+      ],
+      "stack": ["LLMs", "RAG", "TypeScript", "Python", "Automated Evals", "Event-Driven Architecture"],
+      "skills": ["Conversational Latency Mitigation", "Automated LLM Evals", "Event-Driven Architecture"]
+    },
     {
       "link": "https://ryzup.ai/",
       "role": "Senior Software Engineer",
       "company": "GROWWTH PARTNERS",
-      "period": "Jul 2024–Present",
-      "location": "Remote/India",
+      "period": "Jul 2024 - Nov 2025",
+      "location": "India",
       "description": [
-        "Architected AI/Fintech platform transformation, driving 90% latency reduction and 40% faster releases. Led cross-functional strategy with business/product heads for scalable system design.",
-        "Spearheaded real-time WebSocket streaming architecture, transforming static UX into dynamic conversational AI assistant (React, Node.js, AWS/GCP)",
-        "Pioneered reusable react-gas framework adopted company-wide; enhanced developer velocity and code quality standards",
-        "Owned end-to-end system design for AI Assistant and scalable referral engine; drove technical reviews and architecture decisions",
-        "Mentored 4+ junior engineers, fostering ownership culture and engineering craftsmanship; improved team autonomy and code quality"
+        "Architected the core overhaul of an AI-powered fintech platform, reducing application latency by 90% and accelerating release velocity by 40% through scalable system design.",
+        "Designed and implemented a bidirectional WebSocket communication layer, transforming a static web application into a low-latency, interactive AI assistant experience.",
+        "Owned technical architecture, code reviews, and multi-release delivery for flagship AI Assistant and Referral Engine initiatives across product and engineering teams.",
+        "Created a standardized React Google Apps Script (GAS) framework to unify frontend development, while mentoring 4 junior engineers in system design and code quality."
       ],
       "stack": ["React", "Node.js", "Google Apps Script", "WebSocket", "AWS", "Gen AI"],
       "skills": ["Software Design", "Amazon Web Services (AWS)", "Google Apps Script", "Gen AI", "Full-Stack Development"]
@@ -36,8 +64,8 @@
       "link": "https://copods.co/",
       "role": "Software Engineer",
       "company": "copods",
-      "period": "Aug 2021–Apr 2024",
-      "location": "On-site, Pune",
+      "period": "Aug 2021 - Apr 2024",
+      "location": "India",
       "description": [
         "As a key engineer in a client-facing role, I translated complex enterprise needs into innovative and tangible software solutions, from initial concept to full-scale deployment.",
         "Spearheaded multiple proof-of-concepts (POCs) using React and Node.js, rapidly translating abstract ideas into functional prototypes that secured stakeholder buy-in and led to green-lighting two major enterprise development projects.",
@@ -50,8 +78,8 @@
       "link": "https://www.vmware.com/",
       "role": "Software Engineer Contractor",
       "company": "VMware",
-      "period": "Mar 2022–Aug 2023",
-      "location": "Hybrid, Pune",
+      "period": "Mar 2022 - Aug 2023",
+      "location": "India",
       "description": [
         "Took ownership of critical front-end initiatives, focusing on modernization, security, and seamless user experience for core VMware products.",
         "Led migration of user authentication system to OAuth 2.0, eliminated legacy vulnerabilities, and improved product security.",
@@ -64,8 +92,8 @@
       "link": "https://ariksa.com/",
       "role": "Software Engineer Contractor",
       "company": "Ariksa",
-      "period": "Aug 2021–Mar 2022",
-      "location": "Remote, Pune",
+      "period": "Aug 2021 - Mar 2022",
+      "location": "India",
       "description": [
         "Delivered key data visualization features using AntV G6 as part of a 50-person team",
         "Implemented Charts and visualization mapping interconnectivity between VMs using AntV G6"
@@ -76,8 +104,8 @@
       "link": "https://www.linkedin.com/company/birbalstore/",
       "role": "Frontend Engineer Intern",
       "company": "birbal",
-      "period": "Apr 2021–Jul 2021",
-      "location": "Bengaluru",
+      "period": "Apr 2021 - Jul 2021",
+      "location": "India",
       "description": [
         "Built MERN stack apps; strong understanding of JavaScript and React.",
         "Translated Figma designs into high-quality, reusable React components.",
@@ -89,8 +117,8 @@
       "link": "https://www.uniqueinfotech.com/",
       "role": "IT/Network Intern",
       "company": "Unique Infotech Pvt LTD",
-      "period": "Jun 2019–Sep 2019",
-      "location": "Kolkata",
+      "period": "Jun 2019 - Sep 2019",
+      "location": "India",
       "description": [
         "Managed 100+ desktops, programmed .bat automations (50% faster setup), designed DB schema with SQL/Python"
       ],
@@ -98,9 +126,9 @@
     }
   ],
   "education": {
-    "institution": "Future Institute of Engineering and Management 148",
+    "institution": "Future Institute of Engineering and Management",
     "degree": "Bachelor of Technology (BTech), Information Technology",
-    "period": "Jul 2017–Jul 2021",
+    "period": "Jul 2017 - Jul 2021",
     "grade": "8.33",
     "details": [
       "Core: C/C++, Java, Data Structures/Algorithms, DBMS, OS, Networking"
