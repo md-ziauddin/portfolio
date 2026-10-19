@@ -1,0 +1,62 @@
+---
+title: "Empirical Medical RAG Benchmark: Disproving the 50/50 Hybrid Fallacy with Qdrant, Bedrock Titan v2 & LangGraph"
+description: "Complete MLflow experiment breakdown across 100-doc and 300-doc PubMedQA sweeps comparing Dense vs. Hybrid RRF retrieval and Linear vs. Agentic LangGraph orchestration."
+date: "2026-09-22"
+slug: "hybrid-rag-qdrant-benchmarking"
+tags:
+  - "Medical RAG"
+  - "Qdrant"
+  - "AWS Bedrock"
+  - "LangGraph"
+  - "MLflow Benchmarking"
+  - "FastAPI"
+---
+
+### Benchmark Setup & Infrastructure
+
+To replace RAG guesswork with reproducible telemetry, I built an automated **3-Layer Medical RAG Evaluation Pipeline** ([GitHub Commit `c4af8e0`](https://github.com/md-ziauddin/rag_evaluation_pipeline/commit/c4af8e04fe5793619b37927639a270f745ed8740)) tracked in **MLflow (`v2.17.2`, Experiment `medical_rag_evaluation`)**:
+
+* **Primary Dataset:** PubMedQA (`pqa_labeled`) normalized into biomedical passages and gold relevance labels (`qrels`).
+* **Vector Database:** Containerized **Qdrant (`v1.12.4`)** with Recursive Character Splitting (`chunk_size: 300`, `chunk_overlap: 30`).
+* **Embedding Model:** AWS Bedrock **`amazon.titan-embed-text-v2:0`** (1,024 dimensions, normalized).
+* **Generation Model:** AWS Bedrock **`us.anthropic.claude-sonnet-4-5-20250929-v1:0`** (Claude Sonnet 4.5 inference profile).
+* **Orchestration Modes:** **Linear RAG** (direct synthesis) vs. **Agentic RAG (LangGraph)** with self-correcting document relevance grading and query rewriting.
+
+---
+
+### Experiment 1: 100 Documents & 15 Clinical Queries (Initial Sweep)
+
+* **Corpus Size:** 100 medical abstracts (~500 chunks), 15 clinical queries across all 4 pipeline configurations (60 total query evaluations).
+* **Retrieval Settings:** `dense_top_k: 10` | `hybrid_top_k: 20` (fused via Reciprocal Rank Fusion, `k = 60`, equal 50/50 weighting).
+
+| Metric | Run 1: Dense + Linear | Run 2: Dense + Agentic | Run 3: Hybrid + Linear | Run 4: Hybrid + Agentic |
+| :--- | :---: | :---: | :---: | :---: |
+| **`mrr_at_10`** | **`0.4989`** | **`0.4989`** | `0.3400` | `0.3333` |
+| **`ndcg_at_10`** | **`1.1417`** | **`1.1417`** | `0.7410` | `0.7350` |
+| **`answer_relevance`** | `0.7821` | **`0.8094`** | `0.7962` | `0.7887` |
+| **`faithfulness`** | `0.3746` | **`0.3774`** | `0.3691` | `0.3747` |
+| **Latency / Query** | `~508 ms` | `~508 ms` | `~500 ms` | `~500 ms` |
+
+#### Why did Dense (`0.4989` MRR) beat Naive 50/50 Hybrid (`0.3400` MRR) on PubMedQA?
+In pure dense runs, the ground-truth clinical abstract was placed on average at **Rank #2** (`1 / 0.4989 ≈ 2.00`). When BM25 was fused with equal 50/50 weight on natural-language clinical questions, BM25 matched generic biomedical tokens (*"patient"*, *"effect"*, *"cell"*), elevating non-relevant abstracts and pushing the true answer down to **Rank #3** (`1 / 0.3400 ≈ 2.94`). Meanwhile, **Dense + Agentic** achieved the highest answer relevance (**`0.8094`**) by verifying retrieved passages before invoking Claude Sonnet 4.5.
+
+---
+
+### Experiment 2: 300 Documents & 30 Clinical Queries (3x Distractor Scale Sweep)
+
+* **Corpus Size:** 300 medical abstracts (~1,500 chunks, 3x greater distractor density), 30 clinical queries across all 4 configurations (120 total evaluations).
+
+| Metric | Run 1: Dense + Linear | Run 2: Dense + Agentic | Run 3: Hybrid + Linear | Run 4: Hybrid + Agentic |
+| :--- | :---: | :---: | :---: | :---: |
+| **`mrr_at_10`** | **`0.4450`** | **`0.4450`** | `0.2583` | **`0.2922` (+13.1%)** |
+| **`ndcg_at_10`** | **`0.9471`** | **`0.9471`** | `0.5587` | **`0.6441` (+15.3%)** |
+| **`answer_relevance`** | **`0.7955`** | `0.7832` | `0.7853` | `0.7929` |
+| **`faithfulness`** | **`0.3732`** | `0.3684` | `0.3436` | `0.3629` |
+| **Latency / Query** | `~251 ms` | `~252 ms` | `~240 ms` | `~246 ms` |
+
+---
+
+### Core Engineering Takeaways
+
+1. **The "Hybrid Fallacy" Disproved on Unweighted Biomedical Queries:** Standard AI dogma claims hybrid search is always strictly better than dense search. Our MLflow telemetry proves that naive 50/50 BM25 fusion degrades MRR by ~40% (`0.4450` vs `0.2583`) when common medical terms pollute lexical matching. Hybrid retrieval must use query-intent routing or tuned RRF weights rather than blind 50/50 fusion.
+2. **The Agentic RAG Rescue Effect (`+15.3%` NDCG / `+13.1%` MRR):** Under noisy hybrid retrieval (Run 4), the **LangGraph Agentic relevance grader** detected irrelevant chunks injected by BM25, boosting **NDCG@10 from `0.5587` to `0.6441` (+15.3%)** and **MRR@10 from `0.2583` to `0.2922` (+13.1%)** while maintaining **`~246ms` per-query latency**.

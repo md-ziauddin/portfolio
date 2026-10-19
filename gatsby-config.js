@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `MD Ziauddin | Senior Software Engineer`,
-    description: `Personal portfolio for MD Ziauddin, a Senior Software Engineer specializing in AI/Cloud, System Architecture, and Full-stack Delivery.`,
+    title: `MD Ziauddin | Forward Deployed Engineer & Senior AI Systems Architect`,
+    description: `Senior Software Engineer and Forward Deployed AI Engineer (5+ yrs) specializing in production Voice AI (1M+ calls), hybrid RAG, and low-latency distributed systems.`,
     author: `MD Ziauddin`,
-    siteUrl: `https://your-domain.com/`,
+    siteUrl: `https://ziadev.in`,
   },
   plugins: [
     {
@@ -52,7 +52,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         mdxOptions: {
-          remarkPlugins: [require(`remark-gfm`)]
+          remarkPlugins: [require(`remark-gfm`).default || require(`remark-gfm`)]
         }
       }
     }

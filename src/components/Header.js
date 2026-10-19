@@ -14,7 +14,6 @@ const Header = () => {
             name
             headline
             social {
-              email
               github
               linkedin
             }
@@ -79,12 +78,6 @@ const Header = () => {
         </nav>
       </div>
       <ul className="ml-1 md:mt-8 lg:mt-[200px] flex items-center" aria-label="Social media">
-        <li className="mr-5 text-xs">
-          <a href={`mailto:${social.email}`} className="block hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="Email (opens in a new tab)">
-            <span className="sr-only">Email</span>
-            <EmailIcon />
-          </a>
-        </li>
         <li className="mr-5 text-xs">
           <a href={social.github} className="block hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
             <span className="sr-only">GitHub</span>

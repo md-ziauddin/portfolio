@@ -78,62 +78,17 @@ Before touching any AI code, I focused entirely on building a robust WebRTC sign
 
 ### The Tech Stack 🛠️
 
-<table className="w-full text-left border-collapse">
-  <thead>
-    <tr>
-      <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Category</th>
-      <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Technology</th>
-      <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Purpose</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr className="border-b border-slate-300/10">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Monorepo</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Turborepo</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">To manage the Next.js and Nest.js applications in a single repository.</td>
-    </tr>
-    <tr className="border-b border-slate-300/10">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Frontend</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Next.js</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">For the user-facing application, UI rendering, and routing.</td>
-    </tr>
-    <tr className="border-b border-slate-300/10">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Backend</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Nest.js</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">For the custom REST API, WebRTC signaling server, and Gemini integration.</td>
-    </tr>
-    <tr className="border-b border-slate-300/10">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">AI & Voice</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Google Gemini API</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Core AI for STT, TTS, question generation, and feedback analysis.</td>
-    </tr>
-    <tr className="border-b border-slate-300/10">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Real-time Comms</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">WebRTC</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">For real-time, low-latency audio streaming between client and server.</td>
-    </tr>
-    <tr className="border-b border-slate-300/10">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Database</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Supabase (Postgres)</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Managed PostgreSQL database and backend services.</td>
-    </tr>
-    <tr className="border-b border-slate-300/10">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Authentication</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Supabase Auth</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Handles user sign-up, sign-in, and JWT management.</td>
-    </tr>
-    <tr className="border-b border-slate-300/10">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">UI</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Tailwind CSS & Shadcn/ui</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">For a modern, responsive, and component-based design system.</td>
-    </tr>
-    <tr className="border-b border-slate-300/10 last:border-none">
-      <td className="py-4 pr-4 align-top font-semibold text-slate-200">Deployment</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Vercel (Frontend), Docker (Backend)</td>
-      <td className="py-4 pr-4 align-top text-sm text-slate-400">Vercel for the Next.js app; a containerized service for the Nest.js backend.</td>
-    </tr>
-  </tbody>
-</table>
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Monorepo** | `Turborepo` | Manages the Next.js and Nest.js applications in a single repository. |
+| **Frontend** | `Next.js` | User-facing application, UI rendering, and client routing. |
+| **Backend** | `Nest.js` | Custom REST API, WebRTC signaling server, and Gemini Live integration. |
+| **AI & Voice** | `Google Gemini API` | Core AI for real-time STT, TTS, question generation, and feedback analysis. |
+| **Real-time Comms** | `WebRTC` | Low-latency bidirectional audio streaming between client and server. |
+| **Database** | `Supabase (Postgres)` | Managed PostgreSQL database and session transcript persistence. |
+| **Authentication** | `Supabase Auth` | Handles user sign-up, sign-in, role-based access, and JWT validation. |
+| **UI System** | `Tailwind CSS & Shadcn/ui` | Responsive, accessible component-based design system. |
+| **Deployment** | `Vercel & Docker` | Vercel for the Next.js frontend; containerized Docker service for the Nest.js backend. |
 
 ---
 

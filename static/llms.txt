@@ -1,0 +1,29 @@
+# MD Ziauddin - Forward Deployed AI & Systems Engineer (ziadev.in)
+
+> Senior Software Engineer & Forward Deployed AI Engineer (5+ years experience) based in India. Turning complex AI & distributed architectures into reliable, low-latency production systems.
+
+## Quick Identity & Connect
+- **Name:** MD Ziauddin
+- **Roles:** Forward Deployed Engineer (FDE), Senior AI Systems Engineer, Full-Stack & Distributed Backend Architect
+- **Location:** India (Open to Remote / Hybrid / Onsite globally)
+- **Canonical Website:** https://ziadev.in
+- **LinkedIn:** https://www.linkedin.com/in/md-ziauddin
+- **GitHub:** https://github.com/md-ziauddin
+
+## Verified Production Telemetry
+- **1,000,000+ Outbound Voice AI Calls:** Architected and deployed autonomous healthcare & e-commerce Voice AI workflows at OmniDimension with 99.4% uptime.
+- **~380ms Perceived Voice Latency (-79% Dead Air):** Engineered a Dynamic Contextual Filler engine (<120ms intent classification + pre-warmed audio bridge) masking 1,850ms sequential Voice AI + RAG + CRM wait times.
+- **-90% Fintech Platform Latency (2,400ms to 240ms):** Re-architected Growwth Partners' core fintech web platform using bidirectional WebSockets and Redis Pub/Sub while accelerating release velocity by +40%.
+- **Empirical MLflow Medical RAG Evaluation (0.9471 / 1.1417 NDCG@10):** Benchmarked Qdrant v1.12.4 + AWS Bedrock Titan v2 + Claude Sonnet 4.5 + LangGraph across 100-doc and 300-doc PubMedQA sweeps, proving agentic relevance grading rescues noisy BM25 hybrid retrieval by +15.3% NDCG@10 and +13.1% MRR@10 at ~246ms/query.
+- **Fast-Track Promotion (3 Months):** Promoted from Software Engineer - GenAI to Forward Deployed Engineer at OmniDimension within 90 days; drove 50+ qualified patient consultations in the first month via Odoo & LeadSquared CRM integrations.
+
+## Core Technical Stack
+- **AI, GenAI & Voice Systems:** LLMs, Hybrid & Agentic RAG (LangGraph, LangChain), Voice AI (STT/TTS Benchmarking, Conversational Latency Mitigation), Automated LLM Evaluation & SOP Compliance Pipelines, MLflow, AWS Bedrock, OpenAI, Gemini Live API, Qdrant, Weaviate.
+- **Backend & Distributed Systems:** TypeScript, JavaScript, Python, SQL, Node.js, Fastify, FastAPI, Nest.js, Express.js, WebSockets, WebRTC, Event-Driven Architecture, RabbitMQ, Redis, PostgreSQL, Supabase, OAuth 2.0, Sqids.
+- **Frontend & Developer Platforms:** React.js, Next.js, Tailwind CSS, AntV G6 (Infrastructure Graph Visualization), Google Apps Script (Standardized React GAS Framework / RyzUp Sheets).
+
+## Deep-Dive Engineering Case Studies & Blog
+- [Building Articulate AI: Real-Time WebRTC & Gemini Voice Mock Interviewer](https://ziadev.in/showcase/articulate-ai)
+- [Scaling Enterprise Voice AI to 1,000,000+ Calls with Sub-400ms Perceived Latency](https://ziadev.in/showcase/omnidimension-voice-ai-latency)
+- [Empirical Medical RAG Benchmark: Qdrant, Bedrock Titan v2 & LangGraph in MLflow](https://ziadev.in/showcase/hybrid-rag-qdrant-benchmarking)
+- [Full Technical Dossier for LLMs](/llms-full.txt)
