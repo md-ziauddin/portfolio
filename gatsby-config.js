@@ -52,7 +52,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         mdxOptions: {
-          remarkPlugins: [require(`remark-gfm`)]
+          remarkPlugins: [require(`remark-gfm`).default || require(`remark-gfm`)]
         }
       }
     }

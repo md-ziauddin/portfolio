@@ -27,7 +27,7 @@ To replace RAG guesswork with reproducible telemetry, I built an automated **3-L
 ### Experiment 1: 100 Documents & 15 Clinical Queries (Initial Sweep)
 
 * **Corpus Size:** 100 medical abstracts (~500 chunks), 15 clinical queries across all 4 pipeline configurations (60 total query evaluations).
-* **Retrieval Settings:** `dense_top_k: 10` | `hybrid_top_k: 20` (fused via Reciprocal Rank Fusion, $k=60$, equal 50/50 weighting).
+* **Retrieval Settings:** `dense_top_k: 10` | `hybrid_top_k: 20` (fused via Reciprocal Rank Fusion, `k = 60`, equal 50/50 weighting).
 
 | Metric | Run 1: Dense + Linear | Run 2: Dense + Agentic | Run 3: Hybrid + Linear | Run 4: Hybrid + Agentic |
 | :--- | :---: | :---: | :---: | :---: |
@@ -38,7 +38,7 @@ To replace RAG guesswork with reproducible telemetry, I built an automated **3-L
 | **Latency / Query** | `~508 ms` | `~508 ms` | `~500 ms` | `~500 ms` |
 
 #### Why did Dense (`0.4989` MRR) beat Naive 50/50 Hybrid (`0.3400` MRR) on PubMedQA?
-In pure dense runs, the ground-truth clinical abstract was placed on average at **Rank #2** ($1 / 0.4989 \approx 2.00$). When BM25 was fused with equal 50/50 weight on natural-language clinical questions, BM25 matched generic biomedical tokens (*"patient"*, *"effect"*, *"cell"*), elevating non-relevant abstracts and pushing the true answer down to **Rank #3** ($1 / 0.3400 \approx 2.94$).Meanwhile, **Dense + Agentic** achieved the highest answer relevance (**`0.8094`**) by verifying retrieved passages before invoking Claude Sonnet 4.5.
+In pure dense runs, the ground-truth clinical abstract was placed on average at **Rank #2** (`1 / 0.4989 ≈ 2.00`). When BM25 was fused with equal 50/50 weight on natural-language clinical questions, BM25 matched generic biomedical tokens (*"patient"*, *"effect"*, *"cell"*), elevating non-relevant abstracts and pushing the true answer down to **Rank #3** (`1 / 0.3400 ≈ 2.94`). Meanwhile, **Dense + Agentic** achieved the highest answer relevance (**`0.8094`**) by verifying retrieved passages before invoking Claude Sonnet 4.5.
 
 ---
 
