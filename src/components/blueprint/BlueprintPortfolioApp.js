@@ -92,7 +92,7 @@ export default function BlueprintPortfolioApp({ pathname = '/' }) {
   return (
     <div
       id="top"
-      className={`min-h-screen transition-colors duration-300 selection:bg-emerald-500 selection:text-slate-950 ${
+      className={`min-h-screen overflow-x-hidden transition-colors duration-300 selection:bg-emerald-500 selection:text-slate-950 ${
         isDark ? 'bg-[#0B0D10] text-slate-100 dark' : 'bg-[#FAF8F5] text-[#141413]'
       }`}
       style={{
@@ -227,7 +227,7 @@ export default function BlueprintPortfolioApp({ pathname = '/' }) {
         <div className="space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 font-mono text-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 font-mono text-[11px] sm:text-xs">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
                 <span className="font-semibold text-emerald-600 dark:text-emerald-400">
                   Forward Deployed AI &amp; Systems Engineer • India

@@ -68,13 +68,13 @@ export default function VoicePipelineTraceWidget({ isDark }) {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2.5">
+        <div className="flex flex-wrap items-center gap-2.5 w-full lg:w-auto">
           {/* Mode Toggle: Standard vs Zia's Optimized Pipeline */}
-          <div className="inline-flex items-center gap-1.5 p-1 rounded-xl bg-current/5 border border-current/10">
+          <div className="flex flex-col sm:inline-flex sm:flex-row items-stretch sm:items-center gap-1.5 p-1 rounded-xl bg-current/5 border border-current/10 w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setPipelineMode('standard')}
-              className={`py-1.5 px-3 rounded-lg font-mono text-xs font-medium transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap ${
+              className={`py-1.5 px-3 rounded-lg font-mono text-xs font-medium transition-all flex items-center justify-between sm:justify-start gap-2 cursor-pointer whitespace-nowrap ${
                 pipelineMode === 'standard'
                   ? isDark
                     ? 'bg-rose-950/90 text-rose-200 border border-rose-500/40 shadow-sm'
@@ -89,7 +89,7 @@ export default function VoicePipelineTraceWidget({ isDark }) {
             <button
               type="button"
               onClick={() => setPipelineMode('optimized')}
-              className={`py-1.5 px-3 rounded-lg font-mono text-xs font-medium transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap ${
+              className={`py-1.5 px-3 rounded-lg font-mono text-xs font-medium transition-all flex items-center justify-between sm:justify-start gap-2 cursor-pointer whitespace-nowrap ${
                 pipelineMode === 'optimized'
                   ? isDark
                     ? 'bg-emerald-950/90 text-emerald-200 border border-emerald-500/40 shadow-sm'
@@ -105,7 +105,7 @@ export default function VoicePipelineTraceWidget({ isDark }) {
           <button
             type="button"
             onClick={runPacketSimulation}
-            className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+            className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 w-full sm:w-auto ${
               isDark
                 ? 'bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/25 border border-emerald-500/30'
                 : 'bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-300'
@@ -119,12 +119,12 @@ export default function VoicePipelineTraceWidget({ isDark }) {
 
       {/* Perceived Wait Time Visual Meter */}
       <div className="mt-4 p-3.5 rounded-xl border border-current/10 bg-current/[0.02]">
-        <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono mb-2">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs font-mono mb-2">
           <span className="opacity-80">
             Caller Perceived Response Wait Time (Turn-Taking Dead Air):
           </span>
           <span
-            className={`font-bold px-2.5 py-0.5 rounded whitespace-nowrap ${
+            className={`font-bold px-2.5 py-0.5 rounded sm:whitespace-nowrap ${
               pipelineMode === 'optimized'
                 ? 'bg-emerald-500/15 text-emerald-500'
                 : 'bg-rose-500/15 text-rose-500'

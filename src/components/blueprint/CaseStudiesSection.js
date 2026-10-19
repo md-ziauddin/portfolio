@@ -101,15 +101,15 @@ export default function CaseStudiesSection({ isDark, onToast }) {
         </div>
 
         {/* Self-Explanatory Segmented View Switcher */}
-        <div className="self-start lg:self-auto flex flex-col sm:flex-row sm:items-center gap-2 p-2 rounded-2xl border border-current/15 bg-current/[0.03]">
+        <div className="w-full sm:w-auto self-start lg:self-auto flex flex-col sm:flex-row sm:items-center gap-2 p-2 rounded-2xl border border-current/15 bg-current/[0.03]">
           <span className="font-mono text-xs font-semibold opacity-75 px-2 whitespace-nowrap">
             Switch All Cards:
           </span>
-          <div className="flex flex-wrap items-center gap-1.5 flex-nowrap">
+          <div className="flex flex-wrap items-center gap-1.5">
             <button
               type="button"
               onClick={() => setAllCardsMode('production')}
-              className={`px-3.5 py-2 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer whitespace-nowrap ${
+              className={`flex-1 sm:flex-initial px-3 sm:px-3.5 py-2 rounded-xl font-mono text-[11px] sm:text-xs font-semibold transition-all cursor-pointer whitespace-nowrap ${
                 allInProduction
                   ? 'bg-emerald-500 text-slate-950 shadow-sm font-bold'
                   : 'opacity-75 hover:opacity-100 bg-current/5'
@@ -120,7 +120,7 @@ export default function CaseStudiesSection({ isDark, onToast }) {
             <button
               type="button"
               onClick={() => setAllCardsMode('sketch')}
-              className={`px-3.5 py-2 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer whitespace-nowrap ${
+              className={`flex-1 sm:flex-initial px-3 sm:px-3.5 py-2 rounded-xl font-mono text-[11px] sm:text-xs font-semibold transition-all cursor-pointer whitespace-nowrap ${
                 allInSketch
                   ? 'bg-amber-500 text-slate-950 shadow-sm font-bold'
                   : 'opacity-75 hover:opacity-100 bg-current/5'
@@ -400,7 +400,7 @@ export default function CaseStudiesSection({ isDark, onToast }) {
                               placeholder="Custom tag (e.g. cto-review)"
                               maxLength={14}
                               aria-label="Custom shortlink tag"
-                              className={`flex-1 px-3 py-1.5 rounded-lg font-mono text-xs border outline-none ${
+                              className={`min-w-0 flex-1 px-3 py-1.5 rounded-lg font-mono text-xs border outline-none ${
                                 isDark
                                   ? 'bg-slate-900 border-slate-700 text-slate-100 focus:border-emerald-500'
                                   : 'bg-white border-stone-300 text-stone-900 focus:border-stone-600'

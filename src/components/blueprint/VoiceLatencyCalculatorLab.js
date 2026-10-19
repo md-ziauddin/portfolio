@@ -131,9 +131,9 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 self-start xl:self-center">
+          <div className="flex flex-wrap items-center gap-3 w-full xl:w-auto self-start xl:self-center">
             {/* Toggle 1: Published Vendor Standard vs Tuned Streaming Stack */}
-            <div className="inline-flex rounded-2xl p-1 border border-current/15 bg-current/[0.03]">
+            <div className="flex flex-col sm:inline-flex sm:flex-row w-full sm:w-auto rounded-2xl p-1 border border-current/15 bg-current/[0.03] gap-1 sm:gap-0">
               <button
                 type="button"
                 onClick={() => {
@@ -168,7 +168,7 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
             <button
               type="button"
               onClick={() => setUseContextualFiller((prev) => !prev)}
-              className={`flex items-center gap-3 px-4 py-2.5 rounded-2xl border font-mono text-xs font-bold transition-all cursor-pointer shrink-0 ${
+              className={`w-full sm:w-auto flex items-center justify-center sm:justify-start gap-3 px-4 py-2.5 rounded-2xl border font-mono text-xs font-bold transition-all cursor-pointer shrink-0 ${
                 useContextualFiller
                   ? 'bg-emerald-500/15 border-emerald-500/50 text-emerald-500'
                   : 'bg-current/5 border-current/20 opacity-75'
@@ -186,7 +186,7 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
                 />
               </div>
               <div className="text-left">
-                <div className="whitespace-nowrap">
+                <div className="sm:whitespace-nowrap">
                   Contextual Filler: {useContextualFiller ? 'ON (<120ms Bridge)' : 'OFF'}
                 </div>
               </div>
