@@ -5,6 +5,7 @@ import {
   ChevronRight,
   GitBranch,
   Network,
+  Quote,
   Sparkles
 } from 'lucide-react';
 import { CAREER_TIMELINE, PEER_RECOMMENDATIONS } from '../../config/portfolioConfig';
@@ -159,25 +160,37 @@ export default function CareerGraphSection({ isDark }) {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:[grid-template-rows:auto_1fr_auto]">
           {PEER_RECOMMENDATIONS.slice(0, 3).map((rec) => (
             <blockquote
               key={rec.author}
-              className={`p-5 rounded-2xl border flex flex-col justify-between transition-all ${
+              className={`p-5 rounded-2xl border md:row-span-3 grid md:grid-rows-subgrid gap-0 transition-all ${
                 isDark
                   ? 'bg-[#11151C]/85 border-slate-800 hover:border-slate-700'
                   : 'bg-white/95 border-stone-200/90 shadow-sm hover:border-stone-300'
               }`}
             >
-              <p className="text-xs sm:text-sm italic opacity-85 leading-relaxed">
-                &ldquo;{rec.quote}&rdquo;
-              </p>
-              <footer className="mt-4 pt-3 border-t border-current/10 flex items-center justify-between gap-2">
-                <div>
+              <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-current/10">
+                <span className="font-mono text-[11px] font-semibold text-emerald-500 truncate">
+                  {rec.relationship}
+                </span>
+                <Quote className="w-3.5 h-3.5 text-amber-500 shrink-0 opacity-80" />
+              </div>
+
+              <div className="flex items-start pb-4">
+                <p className="text-xs sm:text-sm italic opacity-85 leading-relaxed">
+                  &ldquo;{rec.quote}&rdquo;
+                </p>
+              </div>
+
+              <footer className="pt-3 border-t border-current/10 flex items-center justify-between gap-2">
+                <div className="min-w-0">
                   <div className="font-bold text-xs sm:text-sm">{rec.author}</div>
-                  <div className="font-mono text-[11px] text-emerald-500">{rec.title}</div>
+                  <div className="font-mono text-[11px] text-emerald-500 line-clamp-2 leading-snug">
+                    {rec.title}
+                  </div>
                 </div>
-                <Award className="w-4 h-4 text-amber-500 shrink-0 opacity-80" />
+                <Award className="w-4 h-4 text-amber-500 shrink-0 opacity-80 ml-2" />
               </footer>
             </blockquote>
           ))}

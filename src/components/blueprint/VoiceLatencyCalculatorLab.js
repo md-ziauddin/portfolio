@@ -214,9 +214,9 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
         </div>
 
         {/* 4 Model Selector Cards with Published Vendor Numbers + Optimization Proof */}
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:[grid-template-rows:auto_auto_1fr]">
           {/* Card 1: Telephony */}
-          <div className="p-4 rounded-2xl border border-current/10 bg-current/[0.02] flex flex-col justify-between">
+          <div className="p-4 rounded-2xl border border-current/10 bg-current/[0.02] lg:row-span-3 grid lg:grid-rows-subgrid">
             <div>
               <label
                 htmlFor="select-telephony"
@@ -241,24 +241,24 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
                   </option>
                 ))}
               </select>
+            </div>
 
-              <div className="mt-3 space-y-1 font-mono text-[11px]">
-                <div className="flex justify-between opacity-75">
-                  <span>Vendor Standard:</span>
-                  <span className={ !currentConfig.isOpt ? 'font-bold text-rose-500' : 'line-through opacity-60' }>
-                    {currentConfig.tel.standardLatency}ms
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>FDE Optimized:</span>
-                  <span className="font-bold text-emerald-500">
-                    {currentConfig.tel.optimizedLatency}ms (-{currentConfig.tel.standardLatency - currentConfig.tel.optimizedLatency}ms)
-                  </span>
-                </div>
+            <div className="pt-3 space-y-1 font-mono text-[11px]">
+              <div className="flex justify-between opacity-75">
+                <span>Vendor Standard:</span>
+                <span className={ !currentConfig.isOpt ? 'font-bold text-rose-500' : 'line-through opacity-60' }>
+                  {currentConfig.tel.standardLatency}ms
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span>FDE Optimized:</span>
+                <span className="font-bold text-emerald-500">
+                  {currentConfig.tel.optimizedLatency}ms (-{currentConfig.tel.standardLatency - currentConfig.tel.optimizedLatency}ms)
+                </span>
               </div>
             </div>
 
-            <div className="mt-3 pt-2.5 border-t border-current/10 text-[11px] space-y-1">
+            <div className="pt-3 border-t border-current/10 text-[11px] space-y-1 self-start">
               <p className="opacity-70">{currentConfig.tel.vendorSource}</p>
               <p className="text-emerald-600 dark:text-emerald-400 font-medium flex items-start gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0 mt-0.5" />
@@ -268,7 +268,7 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
           </div>
 
           {/* Card 2: STT */}
-          <div className="p-4 rounded-2xl border border-current/10 bg-current/[0.02] flex flex-col justify-between">
+          <div className="p-4 rounded-2xl border border-current/10 bg-current/[0.02] lg:row-span-3 grid lg:grid-rows-subgrid">
             <div>
               <label
                 htmlFor="select-stt"
@@ -293,24 +293,24 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
                   </option>
                 ))}
               </select>
+            </div>
 
-              <div className="mt-3 space-y-1 font-mono text-[11px]">
-                <div className="flex justify-between opacity-75">
-                  <span>Pipecat Median TTFS:</span>
-                  <span className={ !currentConfig.isOpt ? 'font-bold text-rose-500' : 'line-through opacity-60' }>
-                    {currentConfig.stt.standardLatency}ms
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>FDE Tuned VAD:</span>
-                  <span className="font-bold text-emerald-500">
-                    {currentConfig.stt.optimizedLatency}ms (-{currentConfig.stt.standardLatency - currentConfig.stt.optimizedLatency}ms)
-                  </span>
-                </div>
+            <div className="pt-3 space-y-1 font-mono text-[11px]">
+              <div className="flex justify-between opacity-75">
+                <span>Pipecat Median TTFS:</span>
+                <span className={ !currentConfig.isOpt ? 'font-bold text-rose-500' : 'line-through opacity-60' }>
+                  {currentConfig.stt.standardLatency}ms
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span>FDE Tuned VAD:</span>
+                <span className="font-bold text-emerald-500">
+                  {currentConfig.stt.optimizedLatency}ms (-{currentConfig.stt.standardLatency - currentConfig.stt.optimizedLatency}ms)
+                </span>
               </div>
             </div>
 
-            <div className="mt-3 pt-2.5 border-t border-current/10 text-[11px] space-y-1">
+            <div className="pt-3 border-t border-current/10 text-[11px] space-y-1 self-start">
               <p className="opacity-70">{currentConfig.stt.vendorSource}</p>
               <p className="text-emerald-600 dark:text-emerald-400 font-medium flex items-start gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0 mt-0.5" />
@@ -320,7 +320,7 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
           </div>
 
           {/* Card 3: LLM + RAG */}
-          <div className="p-4 rounded-2xl border border-current/10 bg-current/[0.02] flex flex-col justify-between">
+          <div className="p-4 rounded-2xl border border-current/10 bg-current/[0.02] lg:row-span-3 grid lg:grid-rows-subgrid">
             <div>
               <label
                 htmlFor="select-llm"
@@ -345,28 +345,28 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
                   </option>
                 ))}
               </select>
+            </div>
 
-              <div className="mt-3 space-y-1 font-mono text-[11px]">
-                <div className="flex justify-between opacity-75">
-                  <span>Vendor TTFT + RAG:</span>
-                  <span className={ !currentConfig.isOpt ? 'font-bold text-rose-500' : 'line-through opacity-60' }>
-                    {currentConfig.llm.standardTtft + currentConfig.llm.standardRag}ms
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>FDE Cached + HNSW:</span>
-                  <span className="font-bold text-amber-500">
-                    {currentConfig.llm.optimizedTtft + currentConfig.llm.optimizedRag}ms (-
-                    {currentConfig.llm.standardTtft +
-                      currentConfig.llm.standardRag -
-                      (currentConfig.llm.optimizedTtft + currentConfig.llm.optimizedRag)}
-                    ms)
-                  </span>
-                </div>
+            <div className="pt-3 space-y-1 font-mono text-[11px]">
+              <div className="flex justify-between opacity-75">
+                <span>Vendor TTFT + RAG:</span>
+                <span className={ !currentConfig.isOpt ? 'font-bold text-rose-500' : 'line-through opacity-60' }>
+                  {currentConfig.llm.standardTtft + currentConfig.llm.standardRag}ms
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span>FDE Cached + HNSW:</span>
+                <span className="font-bold text-amber-500">
+                  {currentConfig.llm.optimizedTtft + currentConfig.llm.optimizedRag}ms (-
+                  {currentConfig.llm.standardTtft +
+                    currentConfig.llm.standardRag -
+                    (currentConfig.llm.optimizedTtft + currentConfig.llm.optimizedRag)}
+                  ms)
+                </span>
               </div>
             </div>
 
-            <div className="mt-3 pt-2.5 border-t border-current/10 text-[11px] space-y-1">
+            <div className="pt-3 border-t border-current/10 text-[11px] space-y-1 self-start">
               <p className="opacity-70">{currentConfig.llm.vendorSource}</p>
               <p className="text-emerald-600 dark:text-emerald-400 font-medium flex items-start gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0 mt-0.5" />
@@ -376,7 +376,7 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
           </div>
 
           {/* Card 4: TTS */}
-          <div className="p-4 rounded-2xl border border-current/10 bg-current/[0.02] flex flex-col justify-between">
+          <div className="p-4 rounded-2xl border border-current/10 bg-current/[0.02] lg:row-span-3 grid lg:grid-rows-subgrid">
             <div>
               <label
                 htmlFor="select-tts"
@@ -401,24 +401,24 @@ export default function VoiceLatencyCalculatorLab({ isDark }) {
                   </option>
                 ))}
               </select>
+            </div>
 
-              <div className="mt-3 space-y-1 font-mono text-[11px]">
-                <div className="flex justify-between opacity-75">
-                  <span>Published TTFA:</span>
-                  <span className={ !currentConfig.isOpt ? 'font-bold text-rose-500' : 'line-through opacity-60' }>
-                    {currentConfig.tts.standardLatency}ms
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>FDE WSS Chunked:</span>
-                  <span className="font-bold text-cyan-500">
-                    {currentConfig.tts.optimizedLatency}ms (-{currentConfig.tts.standardLatency - currentConfig.tts.optimizedLatency}ms)
-                  </span>
-                </div>
+            <div className="pt-3 space-y-1 font-mono text-[11px]">
+              <div className="flex justify-between opacity-75">
+                <span>Published TTFA:</span>
+                <span className={ !currentConfig.isOpt ? 'font-bold text-rose-500' : 'line-through opacity-60' }>
+                  {currentConfig.tts.standardLatency}ms
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span>FDE WSS Chunked:</span>
+                <span className="font-bold text-cyan-500">
+                  {currentConfig.tts.optimizedLatency}ms (-{currentConfig.tts.standardLatency - currentConfig.tts.optimizedLatency}ms)
+                </span>
               </div>
             </div>
 
-            <div className="mt-3 pt-2.5 border-t border-current/10 text-[11px] space-y-1">
+            <div className="pt-3 border-t border-current/10 text-[11px] space-y-1 self-start">
               <p className="opacity-70">{currentConfig.tts.vendorSource}</p>
               <p className="text-emerald-600 dark:text-emerald-400 font-medium flex items-start gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0 mt-0.5" />

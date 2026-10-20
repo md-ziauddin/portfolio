@@ -359,51 +359,49 @@ export default function BlueprintPortfolioApp({ pathname = '/' }) {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:[grid-template-rows:auto_auto_auto_1fr]">
             {TELEMETRY_METRICS.map((metric) => (
               <div
                 key={metric.id}
-                className={`p-5 rounded-2xl border flex flex-col justify-between transition-all ${
+                className={`p-5 rounded-2xl border transition-all lg:row-span-4 grid lg:grid-rows-subgrid ${
                   isDark
                     ? 'bg-[#11151C]/90 border-slate-800 hover:border-slate-700'
                     : 'bg-white/95 border-stone-200/90 shadow-sm hover:border-stone-300'
                 }`}
               >
-                <div>
-                  <div className="font-mono text-[11px] font-semibold uppercase tracking-wide opacity-75 leading-snug mb-2">
-                    {metric.badge}
-                  </div>
-                  <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                    <div className="font-mono text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-500">
-                      {metric.value}
-                    </div>
-                    <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-500 whitespace-nowrap shrink-0">
-                      {metric.delta}
-                    </span>
-                  </div>
-                  <div className="font-bold text-sm mt-2">{metric.label}</div>
+                <div className="font-mono text-[11px] font-semibold uppercase tracking-wide opacity-75 leading-snug">
+                  {metric.badge}
                 </div>
-                <p className="mt-2 text-xs opacity-75 leading-relaxed">{metric.detail}</p>
+                <div className="flex items-baseline justify-between gap-2 flex-wrap pt-2">
+                  <div className="font-mono text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-500">
+                    {metric.value}
+                  </div>
+                  <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-500 whitespace-nowrap shrink-0">
+                    {metric.delta}
+                  </span>
+                </div>
+                <div className="font-bold text-sm pt-2">{metric.label}</div>
+                <p className="pt-2 text-xs opacity-75 leading-relaxed self-start">{metric.detail}</p>
               </div>
             ))}
           </div>
 
           {/* 3 Self-Explanatory Value Pillars */}
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:[grid-template-rows:auto_auto_1fr]">
             {FDE_VALUE_PILLARS.map((pillar) => (
               <div
                 key={pillar.id}
-                className={`p-5 rounded-2xl border transition-all ${
+                className={`p-5 rounded-2xl border transition-all md:row-span-3 grid md:grid-rows-subgrid ${
                   isDark
                     ? 'bg-slate-900/40 border-slate-800/80'
                     : 'bg-stone-100/60 border-stone-200/80'
                 }`}
               >
-                <span className="font-mono text-[11px] font-bold text-amber-500 block mb-1">
+                <span className="font-mono text-[11px] font-bold text-amber-500 block">
                   {pillar.badge}
                 </span>
-                <h2 className="font-bold text-sm sm:text-base">{pillar.title}</h2>
-                <p className="mt-1.5 text-xs opacity-80 leading-relaxed">{pillar.description}</p>
+                <h2 className="font-bold text-sm sm:text-base pt-1">{pillar.title}</h2>
+                <p className="pt-1.5 text-xs opacity-80 leading-relaxed">{pillar.description}</p>
               </div>
             ))}
           </div>

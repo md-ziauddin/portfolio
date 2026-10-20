@@ -162,31 +162,38 @@ const ArchivePage = () => {
             All technical write-ups and historical enterprise systems built across OmniDimension, Growwth Partners, VMware, and Ariksa.
           </p>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5 md:[grid-template-rows:auto_auto_1fr_auto]">
             {mdxPosts.map((post) => {
               const slug = post.frontmatter.slug.replace(/^\/+|\/+$/g, '');
               return (
                 <Link
                   key={post.id}
                   to={`/showcase/${slug}`}
-                  className={`p-5 rounded-2xl border flex flex-col justify-between transition-all ${
+                  className={`p-5 rounded-2xl border md:row-span-4 grid md:grid-rows-subgrid gap-0 transition-all ${
                     isDark
                       ? 'bg-[#11151C]/90 border-slate-800 hover:border-emerald-500/50'
                       : 'bg-white border-stone-200 hover:border-emerald-600/50 shadow-sm'
                   }`}
                 >
-                  <div>
-                    <div className="font-mono text-xs text-emerald-500 font-bold mb-1.5">
-                      {post.frontmatter.date}
-                    </div>
-                    <h2 className="font-bold text-base leading-snug">
-                      {post.frontmatter.title}
-                    </h2>
-                    <p className="mt-2 text-xs opacity-80 leading-relaxed">
+                  {/* Row 1: Date */}
+                  <div className="font-mono text-xs text-emerald-500 font-bold pb-2">
+                    {post.frontmatter.date}
+                  </div>
+
+                  {/* Row 2: Title */}
+                  <h2 className="font-bold text-base leading-snug pb-2.5">
+                    {post.frontmatter.title}
+                  </h2>
+
+                  {/* Row 3: Description */}
+                  <div className="pb-4">
+                    <p className="text-xs opacity-80 leading-relaxed">
                       {post.frontmatter.description}
                     </p>
                   </div>
-                  <div className="mt-4 pt-3 border-t border-current/10 font-mono text-xs font-bold text-emerald-500 inline-flex items-center gap-1">
+
+                  {/* Row 4: Action */}
+                  <div className="pt-3 border-t border-current/10 font-mono text-xs font-bold text-emerald-500 inline-flex items-center gap-1">
                     <span>Read Full Article</span>
                     <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
                   </div>

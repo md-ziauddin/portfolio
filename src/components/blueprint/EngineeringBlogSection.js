@@ -61,8 +61,8 @@ export default function EngineeringBlogSection({ isDark }) {
         </div>
       </div>
 
-      {/* MDX Blog Post Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* MDX Blog Post Grid with Subgrid Alignment */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:[grid-template-rows:auto_auto_1fr_auto_auto]">
         {posts.map((post, idx) => {
           const { title, description, date, slug, tags } = post.frontmatter;
           const cleanSlug = slug.replace(/^\/+|\/+$/g, '');
@@ -70,34 +70,38 @@ export default function EngineeringBlogSection({ isDark }) {
           return (
             <article
               key={post.id}
-              className={`group rounded-2xl border p-6 flex flex-col justify-between transition-all duration-300 ${
+              className={`group rounded-2xl border p-6 md:row-span-5 grid md:grid-rows-subgrid gap-0 transition-all duration-300 ${
                 isDark
                   ? 'bg-[#11151C]/90 border-slate-800 hover:border-emerald-500/50'
                   : 'bg-white/95 border-stone-200/90 hover:border-emerald-600/50 shadow-sm'
               }`}
             >
-              <div>
-                <div className="flex items-center justify-between gap-2 font-mono text-xs mb-3">
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-500 font-bold">
-                    ARTICLE 0{idx + 1}
-                  </span>
-                  <time className="opacity-65">{date}</time>
-                </div>
+              {/* Row 1: Header Badge & Date */}
+              <div className="flex items-center justify-between gap-2 font-mono text-xs pb-3">
+                <span className="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-500 font-bold">
+                  ARTICLE 0{idx + 1}
+                </span>
+                <time className="opacity-65">{date}</time>
+              </div>
 
-                <h3 className="text-lg font-bold leading-snug group-hover:text-emerald-500 transition-colors">
-                  <Link to={`/showcase/${cleanSlug}`} className="block">
-                    {title}
-                  </Link>
-                </h3>
+              {/* Row 2: Headline */}
+              <h3 className="text-lg font-bold leading-snug group-hover:text-emerald-500 transition-colors pb-3">
+                <Link to={`/showcase/${cleanSlug}`} className="block">
+                  {title}
+                </Link>
+              </h3>
 
+              {/* Row 3: Description Body */}
+              <div className="pb-4">
                 {description && (
-                  <p className="mt-2.5 text-xs sm:text-sm opacity-80 leading-relaxed">
+                  <p className="text-xs sm:text-sm opacity-80 leading-relaxed">
                     {description}
                   </p>
                 )}
               </div>
 
-              <div className="mt-5 pt-4 border-t border-current/10 space-y-3">
+              {/* Row 4: Tech Stack Tags */}
+              <div className="pt-4 border-t border-current/10 pb-3 flex items-start">
                 {Array.isArray(tags) && tags.length > 0 && (
                   <div className="flex flex-wrap gap-1.5">
                     {tags.slice(0, 5).map((tag) => (
@@ -110,16 +114,17 @@ export default function EngineeringBlogSection({ isDark }) {
                     ))}
                   </div>
                 )}
+              </div>
 
-                <div className="flex items-center justify-between pt-1">
-                  <Link
-                    to={`/showcase/${cleanSlug}`}
-                    className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-emerald-500 group-hover:translate-x-0.5 transition-transform"
-                  >
-                    <span>Read Full Article</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
-                  </Link>
-                </div>
+              {/* Row 5: Action Link */}
+              <div className="flex items-center justify-between pt-1">
+                <Link
+                  to={`/showcase/${cleanSlug}`}
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-emerald-500 group-hover:translate-x-0.5 transition-transform"
+                >
+                  <span>Read Full Article</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+                </Link>
               </div>
             </article>
           );
