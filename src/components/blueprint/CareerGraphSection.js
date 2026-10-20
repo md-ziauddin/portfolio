@@ -164,17 +164,17 @@ export default function CareerGraphSection({ isDark }) {
           {PEER_RECOMMENDATIONS.slice(0, 3).map((rec) => (
             <blockquote
               key={rec.author}
-              className={`p-5 rounded-2xl border md:row-span-3 grid md:grid-rows-subgrid gap-0 transition-all ${
+              className={`p-5 rounded-2xl border min-w-0 md:row-span-3 grid md:grid-rows-subgrid gap-0 transition-all ${
                 isDark
                   ? 'bg-[#11151C]/85 border-slate-800 hover:border-slate-700'
                   : 'bg-white/95 border-stone-200/90 shadow-sm hover:border-stone-300'
               }`}
             >
-              <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-current/10">
-                <span className="font-mono text-[11px] font-semibold text-emerald-500 truncate">
+              <div className="flex items-start justify-between gap-3 pb-3 mb-3 border-b border-current/10 min-w-0">
+                <span className="font-mono text-[11px] font-semibold text-emerald-500 leading-snug min-w-0">
                   {rec.relationship}
                 </span>
-                <Quote className="w-3.5 h-3.5 text-amber-500 shrink-0 opacity-80" />
+                <Quote className="w-3.5 h-3.5 text-amber-500 shrink-0 opacity-80 mt-0.5" />
               </div>
 
               <div className="flex items-start pb-4">
